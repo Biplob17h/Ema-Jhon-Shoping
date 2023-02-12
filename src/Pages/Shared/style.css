@@ -1,0 +1,28 @@
+.customBtn:hover{
+    border-color: transparent;
+}
+.customBtn2:hover{
+    background-color: #95A0A7;
+}
+.coolBorder{
+    border-color: wheat;
+}
+.coolBorder2{
+    border-color: rgb(155, 150, 150);
+}
+.borderCus{
+    border: 1px solid #95A0A7;
+}
+.customBtn3:hover{
+    background-color: #95A0A7;
+    color: white;
+    border-radius: 10px, 10px, 10px, 10px;
+}
+.customBtn4:hover{
+    background-color: #95A0A7;
+    color: white;
+    border-radius: 10px, 10px, 10px, 10px;
+}
+.customBtn4{
+    background-color: orangered;
+}

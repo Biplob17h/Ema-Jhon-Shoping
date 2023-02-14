@@ -8,6 +8,7 @@ import Orders from "../Pages/Orders/Orders";
 import Success from "../Pages/Orders/Success/Success";
 import NotFound from "../Pages/Shared/NotFound";
 import Profile from "../Pages/Shared/Profile";
+import PrivateRoutes from "./PrivateRoutes";
 
 const routes = createBrowserRouter([
     {
@@ -20,7 +21,7 @@ const routes = createBrowserRouter([
             },
             {
                 path:'/order',
-                element:<Orders></Orders>,
+                element:<PrivateRoutes><Orders></Orders></PrivateRoutes>,
                 loader : () => fetch('http://localhost:5000/orders')
             },
             {
@@ -34,7 +35,7 @@ const routes = createBrowserRouter([
             },
             {
                 path:'/notfound',
-                element:<NotFound></NotFound>
+                element:<PrivateRoutes><NotFound></NotFound></PrivateRoutes>
             },
             {
                 path : '/success',

@@ -6,6 +6,11 @@
 .cusHover:hover {
   background-color: lightgray;
 }
+.select{
+  background-color: rgb(80, 133, 150);
+  padding: 10px;
+}
+
 
 .cusorange {
   color: #FF3811;

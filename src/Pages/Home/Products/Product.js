@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { toast } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Context/AuthProvider';
 
 const Product = ({ product}) => {
+    const {user} = useContext(AuthContext)
     const { img, price, name, seller, shipping, _id} = product;
     const handleAddToCurt = _id => {
         const order = {
@@ -33,9 +36,15 @@ const Product = ({ product}) => {
                 <p  className='-mt-2'>shipping : ${shipping}</p>
                 <p  className='-mt-2'>seller : {seller}</p>
             </div>
-            <button onClick={()=>{handleAddToCurt(_id)}} className="btn btn-ghost w-full -mt-6 customBtn3">Add To Curt</button>
+            {
+                user?.uid ?
+                <button onClick={()=>{handleAddToCurt(_id)}} className="btn btn-ghost w-full -mt-6 customBtn3">Add To Curt</button>
+                :
+                <Link to='/login'><button className="btn btn-ghost w-full -mt-6 customBtn3">Add To Curt</button></Link>
+            }
         </div>
     );
 };
 
 export default Product;
+
